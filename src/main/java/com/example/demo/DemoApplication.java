@@ -32,5 +32,11 @@ public class DemoApplication implements ApplicationRunner {
 		authority.setUser(user);
 		userRepository.save(user);
 		authorityRepository.save(authority);
+		authority.setId(null);
+		authority.setAuthority("ROLE_ADMIN");
+		authorityRepository.save(authority);
+		authority.setId(null);
+		authority.setAuthority("ROLE_DEV");
+		authorityRepository.save(authority);
 	}
 }

@@ -16,7 +16,9 @@ public class DemoController {
     String getIndex(Authentication authentication) {
         UserDetails principal = (UserDetails) authentication.getPrincipal();
         logger.info(principal.toString());
-        logger.info(principal.getAuthorities().toArray()[0].toString());
+        principal.getAuthorities().stream().forEach((auth)->{
+            logger.info(auth.toString());
+        });
 
         return "Index page.";
     }
